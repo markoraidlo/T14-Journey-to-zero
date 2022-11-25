@@ -11,7 +11,7 @@ def preprocess(trainDF, testDF, previous_hours=None):
 
   
   # scaler for consumption
-  normScaler = preprocessing.StandardScaler()
+  normScaler = preprocessing.MinMaxScaler()
   normScaler.fit(trainDF[['consumption']])
   trainDF['consumption'] = normScaler.transform(trainDF[['consumption']])
 
